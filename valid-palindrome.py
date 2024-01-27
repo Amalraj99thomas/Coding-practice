@@ -17,7 +17,7 @@ class Solution:
                 l += 1 # increment pointer if val at l is not alpha numeric
             while r > l and not self.alphanum(s[r]):
                 r -= 1
-
+            #comparing left and right pointer values
             if l>r or s[l].lower() != s[r].lower():
                 return False
             else:
