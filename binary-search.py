@@ -2,7 +2,7 @@ from typing import List
 class Solution(object):
     def search(self, nums: List[int], target: int) -> int:
         """
-        :type nums: List[int]
+        :type nums: List[int] # nums is sorted ascending
         :type target: int
         :rtype: int
         """

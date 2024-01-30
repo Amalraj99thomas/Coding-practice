@@ -7,6 +7,13 @@ class Solution(object):
         :rtype: List[int]
         """
         prevMap = {}  #val : index
+        
+        # List = [1, 3, 4, 8]
+
+        # 1: 0
+        # 3: 1
+        # 4: 2
+        # 8: 3
 
         for i, val in enumerate(nums):
             diff = target - val

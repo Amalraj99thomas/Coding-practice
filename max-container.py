@@ -28,7 +28,7 @@ class Solution():
             max_area = max(max_area, area)
 
             if height[l] < height[r]:
-                l += 1 #maximize area
+                l += 1 # move left ptr to the next to search for better area
             else:
                 r -= 1
 
