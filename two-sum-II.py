@@ -3,6 +3,7 @@ class Solution:
     def twoSum(self, nums : List[int], target : int) -> int:
         l, r = 0, len(nums) - 1
 
+        # assuming nums is sorted and there is one exact solution
         while l < r:
             curSum = nums[l] + nums[r]
             if curSum > target:
