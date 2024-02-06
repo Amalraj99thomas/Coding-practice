@@ -44,6 +44,10 @@ The main function, `count_intersections(radians, identifiers)`, takes two lists 
 
 
 ## Algorithmic Logic:
+
+
+### The idea behind the algorithm is to go through `sorted(endpoints)` once. When a label i is seen for the first time, an interval is opened for it. When i is seen again, we close its interval and find out how many intervals have been opened and **not closed** since i was first seen. Each of these represents an intersection between chord i and some other chord. 
+
 The algorithm involves the following key steps:
 
 1. Process Input Lists `chords`: Pairing each start and end point of chords based on the input lists.
@@ -53,8 +57,6 @@ Two points will have the same integer if and only if they are endpoints of the s
 `base_id` will contain 2n integer labels, each label appearing twice.
 
 3. Sort Endpoints `sorted(endpoints)`: Sorting all endpoints (start and end points of chords) based on their radian measures.
-
-### The idea behind the algorithm is to go through `sorted(endpoints)` once. When a label i is seen for the first time, an interval is opened for it. When i is seen again, we close its interval and find out how many intervals have been opened and **not closed** since i was first seen. Each of these represents an intersection between chord i and some other chord. 
 
 4. Segment Tree: Implementing a segment tree data structure to manage active intervals (open chords). The segment tree supports insertion, deletion, and querying the number of active intervals within a range using lazy propogation technique.
 
@@ -76,7 +78,7 @@ For each of the 2n endpoints, the algorithm performs an update or query operatio
 
 * Query Operation: Similarly, querying the segment tree to count the number of active intervals also has a time complexity of O(logn) for the same reason as the update operation.
 
-Since each of the 2n endpoints involves an operation on the segment tree with O(logn) complexity, the total time complexity for handling all endpoints with segment tree operations is O(2nlogn), which simplifies to `O(nlogn)`.
+* Since each of the 2n endpoints involves an operation on the segment tree with O(logn) complexity, the total time complexity for handling all endpoints with segment tree operations is O(2nlogn), which simplifies to `O(nlogn)`.
 
 4. Overall Algorithmic runtime:
 The summing up of time complexities for different parts of the algorithm gives O(nlogn) + O(n) + O(nlogn), which is `O(nlogn)` overall.
