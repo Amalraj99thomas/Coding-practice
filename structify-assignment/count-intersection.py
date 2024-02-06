@@ -12,16 +12,19 @@ class SegmentTree:
                 self.lazy[node * 2 + 1] += self.lazy[node]
             self.lazy[node] = 0
 
+        # if current segment is completely outside range 
         if start > end or start > r or end < l:
             return
 
+        # if current segment is completely within range
         if start >= l and end <= r:
             self.tree[node] += (end - start + 1) * val
             if start != end:
                 self.lazy[node * 2] += val
                 self.lazy[node * 2 + 1] += val
             return
-
+        
+        # if current segment is partially within range
         mid = (start + end) // 2
         self.update_range(node * 2, start, mid, l, r, val)
         self.update_range(node * 2 + 1, mid + 1, end, l, r, val)
@@ -49,7 +52,7 @@ class SegmentTree:
 
 def count_intersections(radians, identifiers) -> int:
     """
-    The purpose of this function is to count the number of intersections 
+    This function counts the number of intersections 
     between chords in a circle. Each chord is represented by its 
     starting and ending radians along with its identifer
     
