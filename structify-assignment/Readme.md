@@ -1,6 +1,13 @@
 # Chord Intersections Counter
 
-count-intersections code provides a solution for counting the number of intersections between chords in a circular arrangement. Each chord is defined by its starting and ending radians, along with a unique identifier.
+`count-intersection.py` script provides a solution for counting the number of intersections between chords in a circular arrangement. Each chord is defined by its starting and ending radians, along with a unique identifier. Overall time complexity in big O notation is `O(nlogn)`.
+
+## Contents:
+1. Segment Tree Implementation
+2. Chord Intersection Counter Function
+3. Algorithmic Logic
+4. Time complexity of the algorithm
+5. How to Use
 
 ## Segment Tree Implementation
 
