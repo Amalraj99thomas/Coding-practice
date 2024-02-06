@@ -31,9 +31,11 @@ class SegmentTree:
         self.tree[node] = self.tree[node * 2] + self.tree[node * 2 + 1]
 
     def query_range(self, node, start, end, l, r):
+        # if current segment is completely outside range 
         if start > end or start > r or end < l:
             return 0
 
+        # check for any pending updates
         if self.lazy[node] != 0:
             self.tree[node] += (end - start + 1) * self.lazy[node]
             if start != end:
@@ -41,6 +43,7 @@ class SegmentTree:
                 self.lazy[node * 2 + 1] += self.lazy[node]
             self.lazy[node] = 0
 
+        # if current segment is completely overlaps with range
         if start >= l and end <= r:
             return self.tree[node]
 
@@ -68,7 +71,8 @@ def count_intersections(radians, identifiers) -> int:
     endpoints = []
     
     for radian, identifier in chords:
-        base_id = ''.join(filter(str.isdigit, identifier))  # Extract digits to handle both formats
+        # Extract digits to handle both formats
+        base_id = ''.join(filter(str.isdigit, identifier))
         is_start = identifier.startswith("s")
         if is_start:
             id_map[base_id] = len(id_map) + 1
@@ -85,9 +89,3 @@ def count_intersections(radians, identifiers) -> int:
             intersections += segment_tree.query_range(1, 1, len(id_map), chord_id + 1, len(id_map))
     
     return intersections
-
-
-# radians = [0.9, 1.3, 1.70, 2.92]
-# identifiers = ["s1", "e1", "s2", "e2"]
-
-# print(count_intersections(radians, identifiers)) 

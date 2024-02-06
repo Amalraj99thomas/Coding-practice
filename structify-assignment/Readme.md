@@ -49,7 +49,7 @@ Two points will have the same integer if and only if they are endpoints of the s
 
 ### The idea behind the algorithm is to go through `sorted(endpoints)` once. When a label i is seen for the first time, an interval is opened for it. When i is seen again, we close its interval and find out how many intervals have been opened and **not closed** since i was first seen. Each of these represents an intersection between chord i and some other chord. 
 
-4. Segment Tree: Implementing a segment tree data structure to manage active intervals (open chords). The segment tree supports insertion, deletion, and querying the number of active intervals within a range.
+4. Segment Tree: Implementing a segment tree data structure to manage active intervals (open chords). The segment tree supports insertion, deletion, and querying the number of active intervals within a range using lazy propogation technique.
 
 5. Count Intersections: Traverse through the sorted endpoints, using the segment tree to count intersections by querying the number of active intervals whenever an endpoint is encountered.
 
@@ -79,3 +79,8 @@ The summing up of time complexities for different parts of the algorithm gives O
 * Provide lists of radians and identifiers to the count_intersections function.
 * The function will return the count of intersections between the chords.
 
+```
+radians = [0.9, 1.3, 1.70, 2.92]
+identifiers = ["s1", "e1", "s2", "e2"]
+print(count_intersections(radians, identifiers))
+```
