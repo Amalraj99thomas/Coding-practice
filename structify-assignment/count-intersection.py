@@ -81,6 +81,7 @@ def count_intersections(radians, identifiers) -> int:
     
     intersections = 0
     segment_tree = SegmentTree(len(id_map))
+    
     for _, chord_id, is_start in sorted(endpoints):
         if is_start:
             segment_tree.update_range(1, 1, len(id_map), chord_id, chord_id, 1)
