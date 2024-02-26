@@ -15,6 +15,7 @@ class Solution:
             else:
                 stack.append(c)
 
+                        # not (stack!=None) means stack is empty
         return True if not stack else False
 
 

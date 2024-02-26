@@ -14,7 +14,7 @@ class Solution():
                 max_area = max(max_area, area)
         return max_area
 
-    # OPtimized approach 
+    # Optimized approach 
     # Time complexity O(n)
     def maxContainerOptim(self, height : List[int]) -> int:
 

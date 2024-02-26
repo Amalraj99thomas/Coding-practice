@@ -17,7 +17,8 @@ class solution():
     
 # testing
     
-prices = [4, 2, 3, 4, 5, 6, 7]
+#prices = [3,4,2,1]
+prices = [4, 2, 3, 1, 5, 6, 7]
 
 soins = solution().sellstock
 
