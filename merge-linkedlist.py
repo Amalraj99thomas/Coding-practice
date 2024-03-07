@@ -17,6 +17,7 @@ class Solution:
                 list2 = list2.next
             tail = tail.next
 
+        # if more values remain after merging
         if list1:
             tail.next = list1
         elif list2:
