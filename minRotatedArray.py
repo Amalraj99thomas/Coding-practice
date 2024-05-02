@@ -13,7 +13,7 @@ class Solution:
             m = (l + r) // 2
             res = min(res, nums[m]) # update res
             if nums[m] > nums[l]: # search right
-                l = m + 1
+                l = m + 1 #since the min cannot be found in the left search space
             else:
                 r = m - 1
         return res

@@ -16,12 +16,36 @@ class Solution:
             # r++
         return maxlen
     
+    def longestsubstring(self, st : str) -> int:
+
+        # variables required
+        window = set()
+        len = 0 
+        p = 0 # window pusher
+
+        # c for each character in s 
+        for c in range(len(st)):
+            # if c in the window
+            while st[c] in window:
+                window.remove(st[p])
+                p += 1
+            # if c not in the window, add
+            window.add(st[c])
+            #calculate max len
+            len = max(len, c - p + 1)
+        return len
+
+
+
+
+
+
 #testrun
     
 sol = Solution()
 
-string = 'pwwkew'
+string = 'pwwkepw'
 
-result = sol.lenLongestSubstring(string)
+result = sol.longestsubstring(string)
 
 print(result)

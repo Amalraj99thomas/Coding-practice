@@ -5,10 +5,10 @@ class Solution(object):
         anagrams_dict = defaultdict(list)
 
         for word in strs:
-            count = [0] * 26
+            count = [0] * 26 # for 26 alphabets
 
             for c in word:
-                count[ord(c) - ord('a')] +=1
+                count[ord(c) - ord('a')] +=1 # find index of c in 26 alphabets and add 1 to it
 
             key = tuple(count)
             anagrams_dict[key].append(word) #defaultdict checks if key exists

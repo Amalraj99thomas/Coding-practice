@@ -24,7 +24,7 @@ class Solution(object):
 #Test:
     
 nums = [-1,0,3,4,4,5,9,12] 
-target = 9
+target = 6
 
 sol_ins = Solution()
 
