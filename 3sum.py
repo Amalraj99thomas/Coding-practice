@@ -7,7 +7,7 @@ class Solution:
         for i, val in enumerate(nums):
             # not the first element and also not same as the previous element
             if i > 0 and val == nums[i - 1]:
-                continue # bypasses the rest of the loop and finds unique val
+                continue # if val == nums is True, this bypasses the rest of the loop and goes to the for loop
 
             l, r = i + 1, len(nums) - 1
             while l < r:
@@ -19,7 +19,7 @@ class Solution:
                 else:
                     res.append([val, nums[l], nums[r]]) 
                     l += 1
-                    while nums[l] == nums[l - 1] and l < r:
+                    while nums[l] == nums[l - 1] and l < r: # to find unique first element
                         l += 1
 
         return res   
